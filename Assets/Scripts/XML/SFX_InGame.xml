@@ -1,0 +1,8 @@
+<SFX_SETUP>
+	<SFX name="Apparition_level" volume="1" />
+	<SFX name="Alert" volume="1" />
+	<SFX name="Buton_selecteur" volume="1" />
+	<SFX name="Click" volume="1" />  
+	<SFX name="Verre" volume="1" />  
+	<SFX name="PoseCase" volume="1" /> 
+</SFX_SETUP>
