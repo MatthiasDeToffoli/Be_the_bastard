@@ -1,0 +1,43 @@
+﻿using Com.IsartDigital.BeTheBastard.Scripts.UI;
+using UnityEngine;
+
+namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
+{
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ClickableObject : MonoBehaviour
+    {
+        protected GameObject chaosBar;
+        protected GameObject sneakyBar;
+
+        [SerializeField]
+        protected float increaseValue;
+        [SerializeField]
+        protected float decreaseValue;
+
+        protected void Start()
+        {
+            chaosBar = GameObject.FindGameObjectWithTag("chaos");
+            sneakyBar = GameObject.FindGameObjectWithTag("sneaky");
+
+            increaseValue = Mathf.Min(increaseValue, 0.05f);
+            increaseValue = Mathf.Min(increaseValue, 0.02f);
+
+            decreaseValue = Mathf.Min(decreaseValue, 0.05f);
+            decreaseValue = Mathf.Max(decreaseValue, 0.02f);
+        }
+
+        protected void Update()
+        {
+
+        }
+
+        void OnMouseDown()
+        {
+            chaosBar.GetComponent<UIBar>().Fill(increaseValue);
+            sneakyBar.GetComponent<UIBar>().UnFill(decreaseValue);
+        }
+    }
+}

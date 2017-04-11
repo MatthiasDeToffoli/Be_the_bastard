@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Audio/Resources.meta
 guid: 2725ff07f977ea04bbd87cd2661f44bd
 folderAsset: yes
 timeCreated: 1480336364
+=======
+guid: 9632e8022f5dac344842d483d4869c82
+folderAsset: yes
+timeCreated: 1491908141
+>>>>>>> Add : UI Bars, bubble info with button:Assets/Prefabs/Resources.meta
 licenseType: Free
 DefaultImporter:
   userData: 

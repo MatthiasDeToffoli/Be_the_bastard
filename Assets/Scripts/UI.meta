@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/GameObjects.meta
+guid: 91f9401b99425684298b4213bde58534
+folderAsset: yes
+timeCreated: 1491922268
+=======
+guid: 433e06a53a0838148b8b6a3523672bdc
+folderAsset: yes
+timeCreated: 1491896836
+>>>>>>> Add : UI Bars, bubble info with button:Assets/Scripts/UI.meta
+licenseType: Free
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
