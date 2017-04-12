@@ -24,7 +24,6 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.UI
 
         public void OnMouseDown()
         {
-            Debug.Log("click boutton");
             Instantiate(myBubble);
         }
     }
