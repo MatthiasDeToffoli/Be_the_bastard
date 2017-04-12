@@ -10,7 +10,6 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
     public class ClickableObject : MonoBehaviour
     {
         protected GameObject chaosBar;
-        protected GameObject sneakyBar;
 
         [SerializeField]
         protected float increaseValue;
@@ -20,7 +19,6 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
         protected void Start()
         {
             chaosBar = GameObject.FindGameObjectWithTag("chaos");
-            sneakyBar = GameObject.FindGameObjectWithTag("sneaky");
 
             increaseValue = Mathf.Min(increaseValue, 0.05f);
             increaseValue = Mathf.Min(increaseValue, 0.02f);
@@ -37,7 +35,6 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
         void OnMouseDown()
         {
             chaosBar.GetComponent<UIBar>().Fill(increaseValue);
-            sneakyBar.GetComponent<UIBar>().UnFill(decreaseValue);
         }
     }
 }

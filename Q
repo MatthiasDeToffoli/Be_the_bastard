@@ -1,0 +1,41 @@
+[33mcommit 6fb4d96bead841877a18fdbef494aee97b7e8043[m
+Author: bapt64 <b.falvet@student.isartdigital.com>
+Date:   Tue Apr 11 17:14:35 2017 +0200
+
+    Add : UI Bars, bubble info with button
+
+[33mcommit 3b2b2cf27b74d201193204345f7d5415fd377d39[m
+Author: ArielleMonier <arielle.monier@gmail.com>
+Date:   Tue Apr 11 16:56:10 2017 +0200
+
+    Add : Email + Buttons
+
+[33mcommit 782e3d74a27a0f49e31dabddf38fe1637d41cd36[m
+Author: Matthias de Toffoli <matew83@hotmail.fr>
+Date:   Tue Apr 11 16:15:44 2017 +0200
+
+    Add : player path finding
+
+[33mcommit ea1b361b3d7384418e33a7b52c604c8bd75352a9[m
+Author: vicktooor <v.grenu@student.isartdigital.com>
+Date:   Tue Apr 11 11:59:52 2017 +0200
+
+    add metronome
+
+[33mcommit 637d3c651fc21d9095606e5c1fac45db1258d10d[m
+Author: Matthias de Toffoli <matew83@hotmail.fr>
+Date:   Mon Apr 10 19:22:56 2017 +0200
+
+    Add : base of the project
+
+[33mcommit f75aa8407920447a3b8ea41465d0d6acf7b6ccd3[m
+Author: Matthias de Toffoli <matew83@hotmail.fr>
+Date:   Mon Apr 10 17:46:46 2017 +0200
+
+    Add : gitignore
+
+[33mcommit 4a6a2ee89c440ac1c03f7f8d9d93e67efa52e2b9[m
+Author: Matthias de Toffoli <matew83@hotmail.fr>
+Date:   Mon Apr 10 16:07:06 2017 +0200
+
+    Initial commit
