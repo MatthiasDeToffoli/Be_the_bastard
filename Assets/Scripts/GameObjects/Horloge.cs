@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Utils;
 
 namespace Assets.Scripts.GameObjects
 {
@@ -20,8 +21,8 @@ namespace Assets.Scripts.GameObjects
         protected GameObject aiguilleMinute;
         #endregion
 
-        protected float minute = 0;
-        protected float heure = 0;
+        protected float minute;
+        protected float heure;
 
         /// <summary>
         /// instance unique de la classe     
@@ -41,6 +42,9 @@ namespace Assets.Scripts.GameObjects
                 throw new Exception("Tentative de création d'une autre instance de horloge alors que c'est un singleton.");
             }
             _instance = this;
+
+            minute = HourInfo.minutes;
+            heure = HourInfo.hours;
         }
 
         protected void Start()
@@ -50,6 +54,9 @@ namespace Assets.Scripts.GameObjects
                 Metronome.instance.onTic.AddListener(HeureRotation);
                 Metronome.instance.interTic.AddListener(MinuteRotation);
             }
+
+            aiguilleMinute.transform.rotation = Quaternion.Euler(0, 0, - HourInfo.hours * 360 / 12);
+            aiguilleHeure.transform.rotation = Quaternion.Euler(0, 0, - HourInfo.minutes * 360);
         }
 
         protected void Update()
@@ -59,7 +66,7 @@ namespace Assets.Scripts.GameObjects
 
         public void HeureRotation()
         {
-            heure ++;
+            heure++;
             aiguilleMinute.transform.rotation = Quaternion.Euler(0,0, -heure * 360/12);
         }
 

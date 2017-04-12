@@ -2,6 +2,7 @@
 using System;
 using UnityEngine.AI;
 using Com.IsartDigital.BeTheBastard.Scripts.Clickable;
+using Com.IsartDigital.Assets.Scripts.IA;
 
 namespace Assets.Scripts.GameObjects.Player
 {
@@ -42,6 +43,33 @@ namespace Assets.Scripts.GameObjects.Player
             _instance = this;
 
             pos = Vector3.zero;
+
+            IA.callAction.AddListener(dobaseAction);
+        }
+
+        public void dobaseAction(BaseAction actionCall) {
+            switch(actionCall)
+            {
+                case BaseAction.TOILET: GoToilet(); break;
+                case BaseAction.DIST: GoDistrib(); break;
+                case BaseAction.COFE: GoCofe(); break;
+                default: break;
+            };
+        }
+
+        protected void GoToilet()
+        {
+            agent.SetDestination(GameObject.Find("Toilette").transform.position);
+        }
+
+        protected void GoDistrib()
+        {
+            agent.SetDestination(GameObject.Find("Distrib").transform.position);
+        }
+
+        protected void GoCofe()
+        {
+            agent.SetDestination(GameObject.Find("Cofe").transform.position);
         }
 
         protected void Start()

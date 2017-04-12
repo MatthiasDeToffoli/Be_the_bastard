@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System.Collections;
 using System;
+using Assets.Scripts.Utils;
 
 public class TempoEvent : UnityEvent<float> { };
 
@@ -76,9 +77,12 @@ namespace Assets.Scripts.Managers
 
             if (movingTime >= totalTime) {
                 movingTime = 0;
+                HourInfo.hours++;
+                HourInfo.minutes = 0;
                 onTic.Invoke();
             }
             else {
+                HourInfo.minutes = Mathf.FloorToInt(percent * 60);
                 interTic.Invoke(percent);
             }
         }
