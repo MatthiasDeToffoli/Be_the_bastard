@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.AI;
+using Com.IsartDigital.BeTheBastard.Scripts.Clickable;
 
 namespace Assets.Scripts.GameObjects.Player
 {
@@ -19,6 +20,8 @@ namespace Assets.Scripts.GameObjects.Player
         private Vector3 pos;
         private Animation anim;
         private Action doAction;
+
+        public static bool isAnimDoor;
         /// <summary>
         /// instance unique de la classe     
         /// </summary>
