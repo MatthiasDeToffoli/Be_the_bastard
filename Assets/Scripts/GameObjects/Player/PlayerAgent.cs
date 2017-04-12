@@ -83,6 +83,36 @@ namespace Assets.Scripts.GameObjects.Player
         {
 
         }
+        
+        public void SetModeClim()
+        {
+            doAction = DoActionClim;
+        }
+
+        protected void DoActionClim()
+        {
+            Debug.Log("Clim activée");
+        }
+
+        public void SetModeDoor()
+        {
+            doAction = DoActionDoor;
+        }
+
+        protected void DoActionDoor()
+        {
+            Debug.Log("porte bloquée");
+        }
+
+        public void SetModeChair()
+        {
+            doAction = DoActionChair;
+        }
+
+        protected void DoActionChair()
+        {
+            Debug.Log("chaise sabotée");
+        }
 
         protected void DoActionMove()
         {
