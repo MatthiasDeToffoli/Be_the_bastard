@@ -8,49 +8,62 @@ using UnityEngine.Events;
 
 public enum BaseAction { TOILET, DIST, COFE };
 
-public class BaseActionEvent : UnityEvent<BaseAction> { };
-
 namespace Com.IsartDigital.Assets.Scripts.IA
 {
     public class IA : MonoBehaviour
     {
-        public static BaseActionEvent callAction = new BaseActionEvent();
 
-        protected static Dictionary<Vector2, Action> actions = new Dictionary<Vector2, Action>();
+        protected NavMeshAgent agent;
+        protected Animation anim;
+        protected Dictionary<Vector2, Action> actions;
 
-        public static void init()
+        [SerializeField]
+        protected Vector3 workPos;
+
+        protected Action doAction;
+
+        virtual protected void Awake()
         {
-            actions.Add(new Vector2(10, 5), GoToToilette);
-            actions.Add(new Vector2(10, 40), GoToDistrib);
-            actions.Add(new Vector2(12, 0), GoToCofe);
+            SetModeVoid();
+            agent = GetComponent<NavMeshAgent>();
+            anim = GetComponent<Animation>();
         }
 
-        protected static void GoToToilette()
+        protected void SetModeVoid()
         {
-            callAction.Invoke(BaseAction.TOILET);
+            doAction = DoActionVoid;
         }
 
-        protected static void GoToDistrib()
+        protected void DoActionVoid()
         {
-            callAction.Invoke(BaseAction.DIST);
+
         }
 
-        protected static void GoToCofe()
+        protected void DoActionMove()
         {
-            callAction.Invoke(BaseAction.COFE);
+            if (!agent.hasPath)
+            {
+                anim.Play("sleep");
+                SetModeVoid();
+            }
         }
 
-        void Awake()
+        protected void SetModeMove()
         {
-            init();
+            anim["walk"].speed = 4f;
+            anim.wrapMode = WrapMode.Loop;
+            anim.Play("walk");
+
+            doAction = DoActionMove;
         }
 
         void Update()
         {
+            doAction();
             checkHour(HourInfo.getHour());          
         }
 
-        void checkHour(Vector2 pHour)
+        protected void checkHour(Vector2 pHour)
         {
             if (actions.ContainsKey(pHour)) {
                 actions[pHour]();
