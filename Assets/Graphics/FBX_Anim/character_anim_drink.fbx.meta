@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 75810f2f62bf73548bc1cf9a283be403
+timeCreated: 1491987089
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body
+    100002: body_up
+    100004: Character1_Reference
+    100006: //RootNode
+    100008: Head
+    100010: joint15
+    100012: joint16
+    100014: joint8
+    100016: L_Arm
+    100018: L_Foot
+    100020: L_Leg
+    100022: left
+    100024: pCube3
+    100026: pCube4
+    100028: pCube5
+    100030: pCylinder3
+    100032: pCylinder4
+    100034: polySurface1
+    100036: polySurface4
+    100038: polySurface4 1
+    100040: polySurface5
+    100042: R_Arm
+    100044: R_Foot
+    100046: R_Leg
+    100048: transform2
+    100050: transform3
+    100052: transform4
+    100054: transform5
+    100056: transform6
+    100058: transform7
+    400000: body
+    400002: body_up
+    400004: Character1_Reference
+    400006: //RootNode
+    400008: Head
+    400010: joint15
+    400012: joint16
+    400014: joint8
+    400016: L_Arm
+    400018: L_Foot
+    400020: L_Leg
+    400022: left
+    400024: pCube3
+    400026: pCube4
+    400028: pCube5
+    400030: pCylinder3
+    400032: pCylinder4
+    400034: polySurface1
+    400036: polySurface4
+    400038: polySurface4 1
+    400040: polySurface5
+    400042: R_Arm
+    400044: R_Foot
+    400046: R_Leg
+    400048: transform2
+    400050: transform3
+    400052: transform4
+    400054: transform5
+    400056: transform6
+    400058: transform7
+    4300000: polySurface4
+    7400000: drink
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: polySurface4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: drink
+      takeName: drink
+      firstFrame: 100
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: body/body_up
+        weight: 1
+      - path: body/body_up/Head
+        weight: 1
+      - path: body/body_up/Head/joint16
+        weight: 1
+      - path: body/body_up/L_Arm
+        weight: 1
+      - path: body/body_up/L_Arm/joint15
+        weight: 1
+      - path: body/body_up/R_Arm
+        weight: 1
+      - path: body/body_up/R_Arm/joint8
+        weight: 1
+      - path: body/L_Leg
+        weight: 1
+      - path: body/L_Leg/L_Foot
+        weight: 1
+      - path: body/R_Leg
+        weight: 1
+      - path: body/R_Leg/R_Foot
+        weight: 1
+      - path: Character1_Reference
+        weight: 1
+      - path: left
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: pCube3/polySurface1
+        weight: 1
+      - path: pCube3/polySurface1/polySurface4 1
+        weight: 1
+      - path: pCube3/polySurface1/polySurface4 1/transform7
+        weight: 1
+      - path: pCube3/polySurface1/polySurface5
+        weight: 1
+      - path: pCube3/polySurface1/polySurface5/transform6
+        weight: 1
+      - path: pCube4
+        weight: 1
+      - path: pCube4/transform2
+        weight: 1
+      - path: pCube5
+        weight: 1
+      - path: pCube5/transform4
+        weight: 1
+      - path: pCylinder3
+        weight: 1
+      - path: pCylinder3/transform3
+        weight: 1
+      - path: pCylinder4
+        weight: 1
+      - path: pCylinder4/transform5
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

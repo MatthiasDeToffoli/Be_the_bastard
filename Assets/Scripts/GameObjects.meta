@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< e87b1c3b32990ef6e09bdd39638c32b6d57b47a4
 guid: 6a9108ca67d9f5d4685ac26f89e851a3
 folderAsset: yes
 timeCreated: 1491923845
+=======
+guid: 71b784abfe42a8045ab6b8b11fe71f7b
+folderAsset: yes
+timeCreated: 1477393385
+>>>>>>> Add : animations asset + test animations
 licenseType: Free
 DefaultImporter:
   userData: 
