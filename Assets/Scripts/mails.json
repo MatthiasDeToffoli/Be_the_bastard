@@ -1,0 +1,36 @@
+{
+
+  "1" :
+    {
+      "txt" : "Text1",
+      "exp" : "Jean",
+      "rep" : [
+        "reponse1.1",
+        "reponse1.2",
+        "reponse1.3"
+      ]
+    },
+
+  "2" :
+  {
+    "txt" : "Text2",
+    "exp" : "Paul",
+    "rep" : [
+      "reponse2.1",
+      "reponse2.2",
+      "reponse2.3"
+    ]
+  },
+
+   "3" :
+  {
+    "txt" : "Text3",
+    "exp" : "Sophie",
+    "rep" : [
+      "reponse3.1",
+      "reponse3.2",
+      "reponse3.3"
+    ]
+  }
+
+}

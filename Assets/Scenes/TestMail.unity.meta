@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< 6fb4d96bead841877a18fdbef494aee97b7e8043
 guid: 76a1b8f02bf90e24293ac0ddf5fa483f
 timeCreated: 1491923845
+=======
+guid: e51a81513d459f848b814535d84c0dd0
+timeCreated: 1491908569
+>>>>>>> Add : mails json / mailBox
 licenseType: Free
 DefaultImporter:
   userData: 
