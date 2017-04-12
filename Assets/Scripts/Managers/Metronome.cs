@@ -66,9 +66,7 @@ namespace Assets.Scripts.Managers
         void Update()
         {
             // Period calcul
-            totalTime = 100 / maxSpeed;
-            totalTime = (l_tempo * totalTime) / 100;
-            totalTime = 1f - totalTime;
+            totalTime = l_tempo * maxSpeed / 100;
 
             // Poucentage in the time period
             movingTime += Time.deltaTime;
