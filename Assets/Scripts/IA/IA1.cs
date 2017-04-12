@@ -7,7 +7,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
     /// <summary>
     /// 
     /// </summary>
-    public class IA2 : IA
+    public class IA1 : IA
     {
         override protected void Awake()
         {
