@@ -32,7 +32,7 @@ public struct Mail {
     }
 }
 
-namespace Assets.Scripts
+namespace Com.IsartDigital.BeTheBastard.Scripts.Email
 {
     public class MailBox
     {
