@@ -34,8 +34,8 @@ namespace Assets
 
         protected UIBar bar;
 
-        protected const float BONUS = 10;
-        protected const float MALUS = 5;
+        protected const float BONUS = 0.05f;
+        protected const float MALUS = 0.2f;
 
         /// <summary>
         /// instance unique de la classe     

@@ -22,6 +22,8 @@ namespace Assets.Scripts.GameObjects.Player
         private Animation anim;
         private Action doAction;
 
+        public string playerType;
+
         public static bool isAnimDoor;
         /// <summary>
         /// instance unique de la classe     
