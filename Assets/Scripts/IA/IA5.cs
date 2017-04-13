@@ -21,7 +21,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
             actions.Add(new Vector2(9, 51), SetModeGoWork);
             actions.Add(new Vector2(15, 20), GoCofe);
-            actions.Add(new Vector2(15, 35), SetModeGoWork);
+            actions.Add(new Vector2(16, 20), SetModeGoWork);
         }
 
         protected override void SetModeGoWork()

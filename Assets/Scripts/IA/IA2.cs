@@ -21,10 +21,10 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             actions = new Dictionary<Vector2, Action>();
 
             actions.Add(new Vector2(9, 30), SetModeGoCofe);
-            actions.Add(new Vector2(9, 45), SetModeGoWork);
+            actions.Add(new Vector2(10, 30), SetModeGoWork);
             actions.Add(new Vector2(12, 20), GoToSleep);
             actions.Add(new Vector2(15, 0), SetModeGoToilet);
-            actions.Add(new Vector2(15, 15), SetModeGoWork);
+            actions.Add(new Vector2(15, 30), SetModeGoWork);
         }
 
         protected void GoToSleep()
@@ -84,7 +84,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             if (haveDrinkCoffee && !sleeping)
             {
-                agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
+                agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.DOOR).transform.position);
                 SetModeGoToilet();
             }
         }

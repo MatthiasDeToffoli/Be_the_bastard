@@ -18,22 +18,14 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
             actions.Add(new Vector2(9, 35), SetModeGoWork);
             actions.Add(new Vector2(11, 0), SetModeGoToilet);
-            actions.Add(new Vector2(11, 15), SetModeGoWork);
+            actions.Add(new Vector2(11, 30), SetModeGoWork);
         }
 
         protected override void SetModeGoWork()
         {
             if (isInToilet)
             {
-                if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DOOR))
-                {
-                    base.SetModeGoWork();
-                }
-                else
-                {
-                    Vector3 newPos = new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y, gameObject.transform.position.z);
-                    gameObject.transform.position = newPos;
-                }
+                
             }
             else
             {
