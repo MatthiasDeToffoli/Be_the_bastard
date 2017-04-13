@@ -164,6 +164,8 @@ namespace Assets.Scripts.GameObjects.Player
             anim.wrapMode = WrapMode.Loop;
             anim.Play("walk");
 
+            ClickableManager.manager.SetObjectName();
+
             doAction = DoActionMove;
         }
 

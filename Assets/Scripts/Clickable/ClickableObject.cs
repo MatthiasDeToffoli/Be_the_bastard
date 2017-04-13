@@ -34,10 +34,12 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
 
         }
 
-        void OnMouseDown()
+        void OnMouseUp()
         {
             //chaosBar.GetComponent<UIBar>().Fill(increaseValue);
-            if (tag != "plane") ClickableManager.manager.SetObjectName(tag);
+            ClickableManager.manager.SetObjectName(tag);
         }
+
+
     }
 }

@@ -15,12 +15,14 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             actions = new Dictionary<Vector2, Action>();
 
             actions.Add(new Vector2(9, 37), SetModeGoWork);
-            actions.Add(new Vector2(11, 30), StartSleep);
+            actions.Add(new Vector2(11, 30), GoSleep);
         }
 
-        protected void StartSleep()
+        protected void GoSleep()
         {
-            
+            anim.Play("sleep");
+            sleeping = true;
+            SetModeSleep();
         }
 
 

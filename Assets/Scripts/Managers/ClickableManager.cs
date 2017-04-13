@@ -138,6 +138,7 @@ namespace Assets.Scripts.Managers
         public void closePanel()
         {
             myPanel.SetActive(false);
+            SetObjectName();
         }
 
         protected void SetTrigger()
