@@ -80,13 +80,13 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         virtual protected void SetModeGoToilet()
         {
             Move();
-            agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
+            agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.DOOR).transform.position);
             doAction = DoActionGoToilet;
         }
 
         virtual protected void DoActionGoToilet()
         {
-            HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
+            HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.DOOR).transform.position);
         }
 
         //cofe machine action
@@ -160,6 +160,29 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         }
 
+        virtual protected void SetModeIsInToilet()
+        {
+            isInToilet = true;
+        }
+
+
+        virtual protected void SetModeGoInToilet()
+        {
+            Move();
+            agent.SetDestination(GameObject.Find("Toilette").transform.position);
+            doAction = DoActionGoInToilet;
+        }
+
+        virtual protected void DoActionGoInToilet()
+        {
+            HavePathAction(GameObject.Find("Toilette").transform.position);
+        }
+
+        virtual protected void SetModePissing()
+        {
+            
+        }
+
         //waiting actions
         virtual protected void SetModeIsAtCofe()
         {
@@ -169,17 +192,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         virtual protected void IsAtCofe()
         {
             
-        }
-
-        virtual protected void SetModeIsInToilet()
-        {
-            doAction = IsAtToilet;
-        }
-
-        virtual protected void IsAtToilet()
-        {
-            isInToilet = true;
-        }
+        }     
 
         virtual protected void SetModeIsAtDistrib()
         {
@@ -218,12 +231,25 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
                 if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position) SetModeIsAtDistrib();
                 else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position) SetModeIsAtCofe();
-                else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position) SetModeIsInToilet();
                 else if(targetPos == GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).transform.position) SetModePanic();
-                else {
-                    SetModeVoid();
+                else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.DOOR).transform.position)
+                {
+                    if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DOOR))
+                    {
+                        agent.SetDestination(GameObject.Find("Toilette").transform.position);
+                        SetModeGoInToilet();
+                    }
+                    else
+                    {
+                        SetModePissing();
+                    }
                 }
-            
+                else if (targetPos == GameObject.Find("Toilette").transform.position) SetModeIsInToilet();
+                else
+                {
+                    SetModeVoid();
+                    anim.Play("sleep");
+                }           
             }
         }
 

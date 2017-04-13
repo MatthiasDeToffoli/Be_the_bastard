@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 229f26be9159fae4388b3c253f4cd9b3
+<<<<<<< 05dc471108af20cbc0a28569002140d6111b3800
 <<<<<<< 40647fff0d919f2522e785d8b59370c1fbd030f9
 timeCreated: 1492101088
 =======
 timeCreated: 1492095366
 >>>>>>> Add : distributor interaction / can block someone in toilet
+=======
+timeCreated: 1492098386
+>>>>>>> Maj : toilet interaction
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 23800000
