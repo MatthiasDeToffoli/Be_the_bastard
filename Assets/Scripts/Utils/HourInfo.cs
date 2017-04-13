@@ -18,7 +18,7 @@ namespace Assets.Scripts.Utils
         public static void reset()
         {
             hours = 9;
-            minutes = 0;
+            minutes = 30;
         }
     }
 }

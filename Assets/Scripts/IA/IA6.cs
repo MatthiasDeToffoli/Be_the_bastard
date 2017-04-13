@@ -14,27 +14,15 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 30), Arrive);
-            actions.Add(new Vector2(10, 0), Cafe);
-            actions.Add(new Vector2(10, 10), Arrive);
+            actions.Add(new Vector2(9, 37), SetModeGoWork);
+            actions.Add(new Vector2(11, 30), StartSleep);
         }
 
-        protected void Arrive()
+        protected void StartSleep()
         {
-            agent.SetDestination(workPos);
-            SetModeMove();
+            Debug.Log("L'IA 6 s'endort");
         }
 
-        protected void Cafe()
-        {
-            agent.SetDestination(GameObject.FindGameObjectWithTag("Cafe").transform.position);
-            SetModeMove();
-        }
-
-        protected void Start()
-        {
-
-        }
 
     }
 }

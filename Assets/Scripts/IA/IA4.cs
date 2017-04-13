@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameObjects;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,26 +15,15 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 30), Arrive);
-            actions.Add(new Vector2(10, 0), Cafe);
-            actions.Add(new Vector2(10, 10), Arrive);
+            actions.Add(new Vector2(9, 47), SetModeGoWork);
+            actions.Add(new Vector2(12, 0), GoToilet);
+            actions.Add(new Vector2(12, 15), SetModeGoWork);
         }
 
-        protected void Arrive()
+        protected void GoToilet()
         {
-            agent.SetDestination(workPos);
-            SetModeMove();
-        }
-
-        protected void Cafe()
-        {
-            agent.SetDestination(GameObject.FindGameObjectWithTag("Cafe").transform.position);
-            SetModeMove();
-        }
-
-        protected void Start()
-        {
-
+            agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
+            SetModeGoToilet();
         }
 
     }

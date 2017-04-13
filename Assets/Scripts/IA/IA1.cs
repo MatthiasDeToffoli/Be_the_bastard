@@ -13,18 +13,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
-        }
 
-        protected void Arrive()
-        {
-            agent.SetDestination(workPos);
-            SetModeMove();
-        }
-
-        protected void Cafe()
-        {
-            agent.SetDestination(GameObject.FindGameObjectWithTag("Cafe").transform.position);
-            SetModeMove();
+            actions.Add(new Vector2(9, 30), SetModeGoWork);
         }
 
         protected void Start()
