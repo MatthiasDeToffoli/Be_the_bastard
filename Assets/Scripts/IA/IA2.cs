@@ -22,8 +22,19 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
             actions.Add(new Vector2(9, 30), SetModeGoCofe);
             actions.Add(new Vector2(9, 45), SetModeGoWork);
-            actions.Add(new Vector2(15, 0), GoToilet);
+            actions.Add(new Vector2(12, 20), GoToSleep);
+            actions.Add(new Vector2(15, 0), SetModeGoToilet);
             actions.Add(new Vector2(15, 15), SetModeGoWork);
+        }
+
+        protected void GoToSleep()
+        {
+            if (!haveDrinkCoffee)
+            {
+                anim.Play("sleep");
+                sleeping = true;
+                SetModeSleep();
+            }
         }
 
         protected override void SetModeGoWork()
@@ -39,8 +50,11 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             } 
             else
             {
-                agent.SetDestination(workPos);
-                doAction = DoActionGoWork;
+                if (!isInToilet)
+                {
+                    agent.SetDestination(workPos);
+                    doAction = DoActionGoWork;
+                }              
             }        
         }
 
@@ -48,7 +62,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             if (!agent.hasPath)
             {
-                Debug.Log("Cette putin de machine a café est en panne !");
+                Debug.Log(name + "Cette putin de machine a café est en panne !");
                 anim.Play("sleep");
                 SetModeVoid();
                 StartCoroutine(WaitAndGoWork());
@@ -68,11 +82,11 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         protected void GoToilet()
         {
-            if (haveDrinkCoffee)
+            if (haveDrinkCoffee && !sleeping)
             {
                 agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
                 SetModeGoToilet();
-            }          
+            }
         }
 
         IEnumerator WaitAndGoWork()

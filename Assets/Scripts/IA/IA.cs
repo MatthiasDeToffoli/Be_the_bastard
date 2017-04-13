@@ -14,6 +14,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 {
     public class IA : MonoBehaviour
     {
+        protected bool sleeping = false;
+        protected bool isInToilet = false;
 
         protected NavMeshAgent agent;
         protected Animation anim;
@@ -113,6 +115,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position);
         }
 
+
         virtual protected void SetModeBibli()
         {
             Move();
@@ -144,7 +147,15 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             doAction = doActionPanic;
         }
 
-        protected void doActionPanic()
+        protected void doActionPanic() { }
+
+        //sleep action
+        virtual protected void SetModeSleep()
+        {
+            doAction = DoActionSleep;
+        }
+
+        virtual protected void DoActionSleep()
         {
 
         }
@@ -167,7 +178,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         virtual protected void IsAtToilet()
         {
-
+            isInToilet = true;
         }
 
         virtual protected void SetModeIsAtDistrib()

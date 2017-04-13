@@ -1,5 +1,5 @@
+﻿
 ﻿using Assets.Scripts.GameObjects;
-using Assets.Scripts.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +27,6 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.SetModePanic();
             GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).GetComponent<ToDestroy>().fall();
         }
-
 
 
         protected void Start()

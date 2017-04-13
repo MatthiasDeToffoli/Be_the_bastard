@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.GameObjects;
 using Assets.Scripts.Managers;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,27 +12,45 @@ namespace Com.IsartDigital.Assets.Scripts.IA
     /// </summary>
     public class IA5 : IA
     {
+        protected bool haveFightForCoffee = false;
+
         override protected void Awake()
         {
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
             actions.Add(new Vector2(9, 51), SetModeGoWork);
-            actions.Add(new Vector2(10, 20), GoCofe);
-            actions.Add(new Vector2(10, 35), SetModeGoWork);
+            actions.Add(new Vector2(15, 20), GoCofe);
+            actions.Add(new Vector2(15, 35), SetModeGoWork);
         }
 
         protected override void SetModeGoWork()
         {
             if (ClickableManager.manager.mate2HaveDrink && ClickableManager.manager.isAllwaysClicked(ClickableManager.COFFEE))
             {
-                agent.SetDestination(new Vector3(1.91f, 0.5f, -4.38f));
-                SetModeMove();
+                if (haveFightForCoffee)
+                {
+                    base.SetModeGoWork();
+                }
+                else
+                {
+                    agent.SetDestination(new Vector3(1.91f, 0.5f, -4.38f));
+                    SetModeMove();
+                }               
             }
             else
             {
                 base.SetModeGoWork();
             }     
+        }
+
+        protected override void DoActionMove()
+        {
+            if (!agent.hasPath && ClickableManager.manager.mate2HaveDrink && ClickableManager.manager.isAllwaysClicked(ClickableManager.COFFEE))
+            {
+                anim.Play("fight");
+                StartCoroutine(BimCoroutine());
+            }
         }
 
         protected void GoCofe()
@@ -41,6 +60,13 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                 agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position);
                 SetModeGoCofe();
             }          
+        }
+
+        IEnumerator BimCoroutine()
+        {
+            yield return new WaitForSeconds(5);
+            haveFightForCoffee = true;
+            SetModeGoWork();
         }
 
     }

@@ -21,6 +21,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             actions.Add(new Vector2(9, 42), SetModeGoWork);
             actions.Add(new Vector2(14, 20), GoDistrib);
             actions.Add(new Vector2(14, 35), SetModeGoWork);
+            actions.Add(new Vector2(15, 0), SetModeSleep);
         }
 
         protected void GoDistrib()
@@ -29,16 +30,24 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             SetModeGoDistrib();
         }
 
+        protected override void SetModeSleep()
+        {
+            if (!haveBuySomething)
+            {
+                anim.Play("Sleep");
+                sleeping = true;
+                base.SetModeSleep();
+            }
+        }
+
         protected override void IsAtDistrib()
         {
             if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DISTRIB))
             {
-                Debug.Log("distrib pas pété");
                 haveBuySomething = true;
             }
             else
             {
-                Debug.Log("distrib pété");
                 haveBuySomething = false;
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameObjects;
+using Assets.Scripts.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,15 +16,29 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 47), SetModeGoWork);
-            actions.Add(new Vector2(12, 0), GoToilet);
-            actions.Add(new Vector2(12, 15), SetModeGoWork);
+            actions.Add(new Vector2(9, 35), SetModeGoWork);
+            actions.Add(new Vector2(11, 0), SetModeGoToilet);
+            actions.Add(new Vector2(11, 15), SetModeGoWork);
         }
 
-        protected void GoToilet()
+        protected override void SetModeGoWork()
         {
-            agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
-            SetModeGoToilet();
+            if (isInToilet)
+            {
+                if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DOOR))
+                {
+                    base.SetModeGoWork();
+                }
+                else
+                {
+                    Vector3 newPos = new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y, gameObject.transform.position.z);
+                    gameObject.transform.position = newPos;
+                }
+            }
+            else
+            {
+                base.SetModeGoWork();
+            }
         }
 
     }
