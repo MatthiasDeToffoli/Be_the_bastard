@@ -3,6 +3,7 @@ using System;
 using UnityEngine.AI;
 using Assets.Scripts.Managers;
 using UnityEngine.EventSystems;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 
 namespace Assets.Scripts.GameObjects.Player
 {
@@ -27,7 +28,7 @@ namespace Assets.Scripts.GameObjects.Player
         public static bool isAnimDoor;
 
 
-        protected string mood;
+        public string mood; // Humeur du player
         /// <summary>
         /// instance unique de la classe     
         /// </summary>
@@ -73,9 +74,8 @@ namespace Assets.Scripts.GameObjects.Player
                     objClicked = GameObject.Find(hit.transform.name);
                     SetModeMove();
                 }
-            
-             
-            }      
+
+            }
         }
 
         protected void SetModeVoid()
@@ -157,27 +157,6 @@ namespace Assets.Scripts.GameObjects.Player
 
                  SetModeVoid();
                  ClickableManager.manager.OpenPanel();
-            }
-        }
-
-        protected void CheckMood(float pPourcentage)
-        {
-
-
-            switch (mood)
-            {
-                case "angry":
-                    Debug.Log("je suis énervé");
-                    break;
-                case "neutral":
-                    Debug.Log("je suis neutre");
-                    break;
-                case "happy":
-                    Debug.Log("je suis happy");
-                    break;
-                default:
-                    Debug.Log("default");
-                    break;
             }
         }
 
