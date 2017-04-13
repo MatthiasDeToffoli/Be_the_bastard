@@ -9,7 +9,6 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.UI
     public class UIBar : MonoBehaviour
     {
 
-
         // Use this for initialization
         void Start()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Com.IsartDigital.BeTheBastard.Scripts.UI;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ namespace Assets
         [SerializeField]
         protected Text sender;
 
+        //Answer Choice
         [SerializeField]
         protected Text choice1;
         [SerializeField]
@@ -29,6 +31,11 @@ namespace Assets
         protected Text choice3;
 
         public ChoiceEvent choiceBtn;
+
+        protected UIBar bar;
+
+        protected const float BONUS = 10;
+        protected const float MALUS = 5;
 
         /// <summary>
         /// instance unique de la classe     
@@ -40,6 +47,11 @@ namespace Assets
                 if (_instance == null) _instance = new Emails();
                 return _instance;
             }
+        }
+
+        protected void Start()
+        {
+            bar = GameObject.FindGameObjectWithTag("chaos").GetComponent<UIBar>();
         }
 
         void Awake()
@@ -79,19 +91,19 @@ namespace Assets
         //Choice who impact the discretion 
         protected void BadChoice()
         {
-            Debug.Log("Bad Choice");
+            bar.UnFill(MALUS);
         }
 
         //Choice who impact nothing
         protected void MediumChoice()
         {
-            Debug.Log("Medium Choice");
+            bar.Fill(0);
         }
 
         //Choice who impact chaos
         protected void GoodChoice()
         {
-            Debug.Log("Good Choice");
+            bar.Fill(BONUS);
         }
     #endregion
 
