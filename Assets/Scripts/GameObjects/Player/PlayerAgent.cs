@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.AI;
-using Com.IsartDigital.BeTheBastard.Scripts.Clickable;
-using Com.IsartDigital.Assets.Scripts.IA;
+using Assets.Scripts.Managers;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.GameObjects.Player
 {
@@ -57,8 +57,8 @@ namespace Assets.Scripts.GameObjects.Player
         protected void Update()
         {
             doAction();
-
-            if (Input.GetMouseButtonDown(0))
+            
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -77,6 +77,7 @@ namespace Assets.Scripts.GameObjects.Player
 
         protected void SetModeVoid()
         {
+            anim.Stop();
             doAction = DoActionVoid;
         }
 
@@ -93,6 +94,29 @@ namespace Assets.Scripts.GameObjects.Player
         protected void DoActionClim()
         {
             Debug.Log("Clim activée");
+            SetModeVoid();
+        }
+
+        public void SetModeCoffee()
+        {
+            doAction = DoActionCoffee;
+        }
+
+        protected void DoActionCoffee()
+        {
+            Debug.Log("Café débranché");
+            SetModeVoid();
+        }
+
+        public void SetModeDistrib()
+        {
+            doAction = DoActionDistrib;
+        }
+
+        protected void DoActionDistrib()
+        {
+            Debug.Log("Panneau sur le distrib");
+            SetModeVoid();
         }
 
         public void SetModeDoor()
@@ -103,6 +127,7 @@ namespace Assets.Scripts.GameObjects.Player
         protected void DoActionDoor()
         {
             Debug.Log("porte bloquée");
+            SetModeVoid();
         }
 
         public void SetModeChair()
@@ -113,6 +138,7 @@ namespace Assets.Scripts.GameObjects.Player
         protected void DoActionChair()
         {
             Debug.Log("chaise sabotée");
+            SetModeVoid();
         }
 
         protected void DoActionMove()
@@ -125,9 +151,10 @@ namespace Assets.Scripts.GameObjects.Player
                     Vector3 roundAgentPos = new Vector3(transform.position.x, 0, transform.position.z);
                     transform.rotation = Quaternion.LookRotation(roundTargetPos - roundAgentPos);
                 }
-                
-                anim.Play("sleep");
-                SetModeVoid();
+
+
+                 SetModeVoid();
+                 ClickableManager.manager.OpenPanel();
             }
         }
 

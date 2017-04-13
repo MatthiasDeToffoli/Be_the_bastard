@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.GameObjects.Player;
+using Com.IsartDigital.BeTheBastard.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Managers
 {
@@ -7,23 +9,44 @@ namespace Assets.Scripts.Managers
     /// <summary>
     /// 
     /// </summary>
-    public class ClickableManager : MonoBehaviour
+    public class ClickableManager : BaseManager<ClickableManager>
     {
 
         protected bool isClimTriggered;
         protected bool isDoorTriggered;
         protected bool isChairTriggered;
+        protected bool isCoffeeTriggered;
+        protected bool isDistribTriggered;
 
         protected const string CLIM = "clim";
         protected const string DOOR = "door";
         protected const string CHAIR = "chair";
+        protected const string COFFEE = "coffee";
+        protected const string DISTRIB = "distrib";
+        protected const string NONE = "none";
+
+
+        protected const string SABOT = "Saboter";
+        protected const string UNPLUG = "débrancher";
+        protected const string PAST_PANEL = "poser un panneau en panne";
+
+        protected GameObject myPanel;
+        protected Text rep1;
 
         protected string objectName;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            SetObjectName();
+        }
 
         protected void Start()
         {
+            myPanel = GameObject.FindGameObjectWithTag("hudContextuel");
+            rep1 = GameObject.FindGameObjectWithTag("contextuelReponse1").GetComponent<Text>();
 
+            closePanel();
         }
 
         protected void Update()
@@ -31,12 +54,63 @@ namespace Assets.Scripts.Managers
 
         }
 
-        protected void SetObjectName(string pName)
+        public bool isAClickable()
         {
-            objectName = pName;
+            return objectName != NONE && !isAllwaysClicked(objectName);
         }
 
-        protected void OrderActionToPlayer()
+        public void SetObjectName(string pName = NONE)
+        {
+            objectName = pName;
+            
+        }
+
+        public bool isAllwaysClicked(string pTag)
+        {
+            switch (pTag)
+            {
+                case CLIM:
+                    return isClimTriggered;
+
+                case DOOR:
+                    return isDoorTriggered;
+                case CHAIR:
+                    return isChairTriggered;
+                case COFFEE:
+                    return isCoffeeTriggered;
+                case DISTRIB:
+                    return isDistribTriggered;
+            }
+
+            return false;
+        }
+        public void OpenPanel()
+        {
+            if (!isAClickable()) return;
+
+            switch (objectName)
+            {
+                case CLIM:
+                    rep1.text = SABOT;
+                    break;
+                case DOOR:
+                    rep1.text = SABOT;
+                    break;
+                case CHAIR:
+                    rep1.text = SABOT;
+                    break;
+                case COFFEE:
+                    rep1.text = UNPLUG;
+                    break;
+                case DISTRIB:
+                    rep1.text = PAST_PANEL;
+                    break;
+            }
+
+            myPanel.SetActive(true);
+        }
+
+        public void OrderActionToPlayer()
         {
             switch (objectName){
                 case CLIM:
@@ -48,10 +122,24 @@ namespace Assets.Scripts.Managers
                 case CHAIR:
                     PlayerAgent.instance.SetModeChair();
                     break;
+                case COFFEE:
+                    PlayerAgent.instance.SetModeCoffee();
+                    break;
+                case DISTRIB:
+                    PlayerAgent.instance.SetModeDistrib();
+                    break;
             }
+
+            SetTrigger();
+            SetObjectName();
         }
 
-        public void SetTrigger()
+        public void closePanel()
+        {
+            myPanel.SetActive(false);
+        }
+
+        protected void SetTrigger()
         {
             switch (objectName)
             {
@@ -64,7 +152,15 @@ namespace Assets.Scripts.Managers
                 case CHAIR:
                     isChairTriggered = true;
                     break;
+                case COFFEE:
+                    isCoffeeTriggered = true;
+                    break;
+                case DISTRIB:
+                    isDistribTriggered = true;
+                    break;
             }
+
+            closePanel();
         }
     }
 }
