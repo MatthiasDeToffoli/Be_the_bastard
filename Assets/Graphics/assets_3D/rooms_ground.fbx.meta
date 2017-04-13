@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: d314e599495991f499b644af8551b6c5
+timeCreated: 1492070275
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bin
+    100002: classroom
+    100004: classroom_door
+    100006: classroom_ground
+    100008: classroom_walls
+    100010: hall
+    100012: hall_ground
+    100014: hall_walls
+    100016: paper
+    100018: pCube15
+    100020: pCube28
+    100022: pCube29
+    100024: pCube6
+    100026: poster
+    100028: pPlane5
+    100030: pPlane6
+    100032: //RootNode
+    100034: snack_dispenser
+    100036: snack_dispenser1
+    100038: toilet
+    100040: toilet_cubicle
+    100042: toilet_walls
+    100044: toilets_door
+    100046: toilets_ground
+    100048: windows_bars
+    100050: windows_bars_2
+    400000: bin
+    400002: classroom
+    400004: classroom_door
+    400006: classroom_ground
+    400008: classroom_walls
+    400010: hall
+    400012: hall_ground
+    400014: hall_walls
+    400016: paper
+    400018: pCube15
+    400020: pCube28
+    400022: pCube29
+    400024: pCube6
+    400026: poster
+    400028: pPlane5
+    400030: pPlane6
+    400032: //RootNode
+    400034: snack_dispenser
+    400036: snack_dispenser1
+    400038: toilet
+    400040: toilet_cubicle
+    400042: toilet_walls
+    400044: toilets_door
+    400046: toilets_ground
+    400048: windows_bars
+    400050: windows_bars_2
+    2300000: bin
+    2300002: classroom_door
+    2300004: classroom_ground
+    2300006: classroom_walls
+    2300008: hall_ground
+    2300010: hall_walls
+    2300012: paper
+    2300014: pCube15
+    2300016: pCube28
+    2300018: pCube29
+    2300020: poster
+    2300022: pPlane5
+    2300024: pPlane6
+    2300026: snack_dispenser
+    2300028: snack_dispenser1
+    2300030: toilet
+    2300032: toilet_walls
+    2300034: toilets_door
+    2300036: toilets_ground
+    2300038: windows_bars
+    2300040: windows_bars_2
+    3300000: bin
+    3300002: classroom_door
+    3300004: classroom_ground
+    3300006: classroom_walls
+    3300008: hall_ground
+    3300010: hall_walls
+    3300012: paper
+    3300014: pCube15
+    3300016: pCube28
+    3300018: pCube29
+    3300020: poster
+    3300022: pPlane5
+    3300024: pPlane6
+    3300026: snack_dispenser
+    3300028: snack_dispenser1
+    3300030: toilet
+    3300032: toilet_walls
+    3300034: toilets_door
+    3300036: toilets_ground
+    3300038: windows_bars
+    3300040: windows_bars_2
+    4300000: classroom_walls
+    4300002: classroom_ground
+    4300004: windows_bars
+    4300006: toilet_walls
+    4300008: toilets_ground
+    4300010: pCube15
+    4300012: hall_walls
+    4300014: hall_ground
+    4300016: toilets_door
+    4300018: snack_dispenser
+    4300020: windows_bars_2
+    4300022: classroom_door
+    4300024: toilet
+    4300026: poster
+    4300028: pCube28
+    4300030: bin
+    4300032: pCube29
+    4300034: pPlane5
+    4300036: pPlane6
+    4300038: paper
+    4300040: snack_dispenser1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -64,11 +64,11 @@ namespace Assets.Scripts.GameObjects.Player
                 if (Physics.Raycast(ray, out hit))
                 {
                     agent.SetDestination(hit.point);
-
                     objClicked = GameObject.Find(hit.transform.name);
+                    SetModeMove();
                 }          
 
-                    SetModeMove();
+                    
                     
                 }      
 
