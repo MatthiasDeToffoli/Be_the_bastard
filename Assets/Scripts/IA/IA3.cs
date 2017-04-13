@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameObjects;
+using Assets.Scripts.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
     /// </summary>
     public class IA3 : IA
     {
+        protected bool haveBuySomething = false;
+
         override protected void Awake()
         {
             base.Awake();
@@ -26,6 +29,18 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             SetModeGoDistrib();
         }
 
-
+        protected override void IsAtDistrib()
+        {
+            if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DISTRIB))
+            {
+                Debug.Log("distrib pas pété");
+                haveBuySomething = true;
+            }
+            else
+            {
+                Debug.Log("distrib pété");
+                haveBuySomething = false;
+            }
+        }
     }
 }

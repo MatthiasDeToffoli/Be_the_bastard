@@ -20,7 +20,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         protected void StartSleep()
         {
-            Debug.Log("L'IA 6 s'endort");
+            
         }
 
 

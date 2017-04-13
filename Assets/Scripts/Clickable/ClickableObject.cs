@@ -36,10 +36,8 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Clickable
 
         void OnMouseDown()
         {
-
-
             //chaosBar.GetComponent<UIBar>().Fill(increaseValue);
-            ClickableManager.manager.SetObjectName(tag);
+            if (tag != "plane") ClickableManager.manager.SetObjectName(tag);
         }
     }
 }

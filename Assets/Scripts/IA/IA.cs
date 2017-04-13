@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameObjects;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Utils;
 using System;
 using System.Collections;
@@ -22,7 +23,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         protected Vector3 workPos;
         [SerializeField]
         protected GameObject workTable;
-
+            
         protected Action doAction;
         protected string actualPosition;
 
@@ -35,7 +36,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         }
 
         //work action
-        protected void SetModeGoWork()
+        virtual protected void SetModeGoWork()
         {
             anim["walk"].speed = 4f;
             anim.wrapMode = WrapMode.Loop;
@@ -45,102 +46,102 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             doAction = DoActionGoWork;
         }
 
-        protected void DoActionGoWork()
+        virtual protected void DoActionGoWork()
         {
             HavePathAction(workTable.transform.position);
         }
 
         //void action
-        protected void SetModeVoid()
+        virtual protected void SetModeVoid()
         {
             doAction = DoActionVoid;
         }
 
-        protected void DoActionVoid()
+        virtual protected void DoActionVoid()
         {
 
         }
 
         //move action
-        protected void SetModeMove()
+        virtual protected void SetModeMove()
         {
             Move();
             doAction = DoActionMove;
         }
 
-        protected void DoActionMove()
+        virtual protected void DoActionMove()
         {
             HavePathAction(Vector3.zero);
         }
 
         //toilet action
-        protected void SetModeGoToilet()
+        virtual protected void SetModeGoToilet()
         {
             Move();
             agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
             doAction = DoActionGoToilet;
         }
 
-        protected void DoActionGoToilet()
+        virtual protected void DoActionGoToilet()
         {
             HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position);
         }
 
         //cofe machine action
-        protected void SetModeGoCofe()
+        virtual protected void SetModeGoCofe()
         {
             Move();
             agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position);
             doAction = DoActionGoCofe;
         }
 
-        protected void DoActionGoCofe()
+        virtual protected void DoActionGoCofe()
         {
             HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position);
         }
 
         //Distrib action
-        protected void SetModeGoDistrib()
+        virtual protected void SetModeGoDistrib()
         {
             Move();
             agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position);
             doAction = DoActionGoDistrib;
         }
 
-        protected void DoActionGoDistrib()
+        virtual protected void DoActionGoDistrib()
         {
             HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position);
         }
 
         //waiting actions
-        protected void SetModeIsAtCofe()
+        virtual protected void SetModeIsAtCofe()
         {
             doAction = IsAtCofe;
         }
 
-        protected void IsAtCofe()
+        virtual protected void IsAtCofe()
         {
-
+            
         }
 
-        protected void SetModeIsInToilet()
+        virtual protected void SetModeIsInToilet()
         {
             doAction = IsAtToilet;
         }
 
-        protected void IsAtToilet()
+        virtual protected void IsAtToilet()
         {
 
         }
 
-        protected void SetModeIsAtDistrib()
+        virtual protected void SetModeIsAtDistrib()
         {
             doAction = IsAtDistrib;
         }
 
-        protected void IsAtDistrib()
+        virtual protected void IsAtDistrib()
         {
-
+             
         }
 
         //General action
@@ -171,9 +172,11 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                 if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position) SetModeIsAtDistrib();
                 else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position) SetModeIsAtCofe();
                 else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position) SetModeIsInToilet();
+                else {
+                    SetModeVoid();
+                }
 
-                anim.Play("sleep");
-                SetModeVoid();
+                anim.Play("sleep");             
             }
         }
 

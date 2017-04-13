@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.GameObjects.Player;
 using Com.IsartDigital.BeTheBastard.Scripts.Managers;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Managers
     /// </summary>
     public class ClickableManager : BaseManager<ClickableManager>
     {
+        public bool mate2HaveDrink = false;
 
         protected bool isClimTriggered;
         protected bool isDoorTriggered;
@@ -18,13 +20,12 @@ namespace Assets.Scripts.Managers
         protected bool isCoffeeTriggered;
         protected bool isDistribTriggered;
 
-        protected const string CLIM = "clim";
-        protected const string DOOR = "door";
-        protected const string CHAIR = "chair";
-        protected const string COFFEE = "coffee";
-        protected const string DISTRIB = "distrib";
+        public const string CLIM = "clim";
+        public const string DOOR = "door";
+        public const string CHAIR = "chair";
+        public const string COFFEE = "coffee";
+        public const string DISTRIB = "distrib";
         protected const string NONE = "none";
-
 
         protected const string SABOT = "Saboter";
         protected const string UNPLUG = "débrancher";
