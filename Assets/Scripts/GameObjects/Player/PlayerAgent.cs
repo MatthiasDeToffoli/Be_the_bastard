@@ -25,6 +25,9 @@ namespace Assets.Scripts.GameObjects.Player
         public string playerType;
 
         public static bool isAnimDoor;
+
+
+        protected string mood;
         /// <summary>
         /// instance unique de la classe     
         /// </summary>
@@ -69,13 +72,11 @@ namespace Assets.Scripts.GameObjects.Player
                     agent.SetDestination(hit.point);
                     objClicked = GameObject.Find(hit.transform.name);
                     SetModeMove();
-                }          
-
-                    
-                    
-                }      
-
-         }
+                }
+            
+             
+            }      
+        }
 
         protected void SetModeVoid()
         {
@@ -154,9 +155,29 @@ namespace Assets.Scripts.GameObjects.Player
                     transform.rotation = Quaternion.LookRotation(roundTargetPos - roundAgentPos);
                 }
 
-
                  SetModeVoid();
                  ClickableManager.manager.OpenPanel();
+            }
+        }
+
+        protected void CheckMood(float pPourcentage)
+        {
+
+
+            switch (mood)
+            {
+                case "angry":
+                    Debug.Log("je suis énervé");
+                    break;
+                case "neutral":
+                    Debug.Log("je suis neutre");
+                    break;
+                case "happy":
+                    Debug.Log("je suis happy");
+                    break;
+                default:
+                    Debug.Log("default");
+                    break;
             }
         }
 

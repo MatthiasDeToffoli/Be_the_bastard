@@ -24,7 +24,7 @@ public class MyAudioClip
 /// Sfx manager.
 /// Gestion de SFX
 /// </summary>
-public class SfxManager<T> : BaseManager<T> where T : Component
+public class SfxManager : BaseManager<SfxManager>
     {
 
 	public TextAsset sfxXmlSetup;

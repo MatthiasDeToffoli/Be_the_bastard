@@ -82,28 +82,31 @@ namespace Assets
     #region AnswerChoice
         public void Choice(int NumChoice)
         {
-            if (NumChoice == 1) BadChoice();
-            if (NumChoice == 2) MediumChoice();
-            if (NumChoice == 3) GoodChoice();
+            if (NumChoice == 1) Choice1();
+            if (NumChoice == 2) Choice2();
+            if (NumChoice == 3) Choice3();
         }
     #endregion
     #region AnswerAction
         //Choice who impact the discretion 
-        protected void BadChoice()
+        protected void Choice1()
         {
             bar.UnFill(MALUS);
+            Debug.Log("Choice1");
         }
 
         //Choice who impact nothing
-        protected void MediumChoice()
+        protected void Choice2()
         {
             bar.Fill(0);
+            Debug.Log("Choice2");
         }
 
         //Choice who impact chaos
-        protected void GoodChoice()
+        protected void Choice3()
         {
             bar.Fill(BONUS);
+            Debug.Log("Choice3");
         }
     #endregion
 

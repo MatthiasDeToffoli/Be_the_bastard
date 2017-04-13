@@ -23,6 +23,7 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.UI
 
         public void Fill(float pValue)
         {
+            Debug.Log(GetComponent<Scrollbar>().size);
             GetComponent<Scrollbar>().size += pValue;
         }
 
