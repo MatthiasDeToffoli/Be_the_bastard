@@ -50,11 +50,17 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             } 
             else
             {
-                if (!isInToilet)
+                if (isInToilet)
                 {
-                    agent.SetDestination(workPos);
-                    doAction = DoActionGoWork;
-                }              
+                    if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DOOR))
+                    {
+                        base.SetModeGoWork();
+                    }
+                }
+                else
+                {
+                    base.SetModeGoWork();
+                }
             }        
         }
 
@@ -69,15 +75,19 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             }
         }
 
+
+
         protected override void IsAtCofe()
         {
             if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.COFFEE))
             {
                 ClickableManager.manager.mate2HaveDrink = true;
                 haveDrinkCoffee = true;
-            }           
+            }
             else
+            {
                 haveDrinkCoffee = false;
+            }
         }
 
         protected void GoToilet()

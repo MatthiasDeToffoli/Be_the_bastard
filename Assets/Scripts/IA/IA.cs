@@ -244,7 +244,10 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                         SetModePissing();
                     }
                 }
-                else if (targetPos == GameObject.Find("Toilette").transform.position) SetModeIsInToilet();
+                else if (targetPos == GameObject.Find("Toilette").transform.position)
+                {
+                    SetModeIsInToilet();
+                }
                 else
                 {
                     SetModeVoid();
