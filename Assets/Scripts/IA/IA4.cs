@@ -25,7 +25,10 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             if (isInToilet)
             {
-                
+                if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.DOOR))
+                {
+                    base.SetModeGoWork();
+                }
             }
             else
             {

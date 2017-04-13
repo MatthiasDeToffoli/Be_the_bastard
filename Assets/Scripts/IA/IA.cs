@@ -180,7 +180,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         virtual protected void SetModePissing()
         {
-            
+            Debug.Log("pisse");
         }
 
         //waiting actions
