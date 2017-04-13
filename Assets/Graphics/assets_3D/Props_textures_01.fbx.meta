@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 423a002fda247d740829c21f221c200c
+timeCreated: 1492099963
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bibliotheque
+    100002: Canette
+    100004: Chaise_v2
+    100006: Clim
+    100008: clim_helices
+    100010: curve5
+    100012: curve6
+    100014: "Lani\xE8re"
+    100016: Ordi_2
+    100018: Ordinateur
+    100020: pCube10
+    100022: pCube12
+    100024: pCube13
+    100026: pCube14
+    100028: pCube15
+    100030: pCube21
+    100032: pCube22
+    100034: pCube24
+    100036: pCube30
+    100038: pCube31
+    100040: pCube32
+    100042: //RootNode
+    100044: Sac_2
+    100046: Table
+    100048: Tablette_1
+    100050: Tablette_2
+    100052: Tour
+    400000: Bibliotheque
+    400002: Canette
+    400004: Chaise_v2
+    400006: Clim
+    400008: clim_helices
+    400010: curve5
+    400012: curve6
+    400014: "Lani\xE8re"
+    400016: Ordi_2
+    400018: Ordinateur
+    400020: pCube10
+    400022: pCube12
+    400024: pCube13
+    400026: pCube14
+    400028: pCube15
+    400030: pCube21
+    400032: pCube22
+    400034: pCube24
+    400036: pCube30
+    400038: pCube31
+    400040: pCube32
+    400042: //RootNode
+    400044: Sac_2
+    400046: Table
+    400048: Tablette_1
+    400050: Tablette_2
+    400052: Tour
+    2300000: Bibliotheque
+    2300002: Canette
+    2300004: Clim
+    2300006: clim_helices
+    2300008: "Lani\xE8re"
+    2300010: Ordi_2
+    2300012: Ordinateur
+    2300014: pCube10
+    2300016: pCube12
+    2300018: pCube13
+    2300020: pCube14
+    2300022: pCube15
+    2300024: pCube21
+    2300026: pCube22
+    2300028: pCube24
+    2300030: pCube30
+    2300032: pCube31
+    2300034: pCube32
+    2300036: Sac_2
+    2300038: Table
+    2300040: Tablette_1
+    2300042: Tablette_2
+    2300044: Tour
+    3300000: Bibliotheque
+    3300002: Canette
+    3300004: Clim
+    3300006: clim_helices
+    3300008: "Lani\xE8re"
+    3300010: Ordi_2
+    3300012: Ordinateur
+    3300014: pCube10
+    3300016: pCube12
+    3300018: pCube13
+    3300020: pCube14
+    3300022: pCube15
+    3300024: pCube21
+    3300026: pCube22
+    3300028: pCube24
+    3300030: pCube30
+    3300032: pCube31
+    3300034: pCube32
+    3300036: Sac_2
+    3300038: Table
+    3300040: Tablette_1
+    3300042: Tablette_2
+    3300044: Tour
+    4300000: pCube10
+    4300002: pCube12
+    4300004: pCube13
+    4300006: pCube15
+    4300008: pCube14
+    4300010: Bibliotheque
+    4300012: Ordinateur
+    4300014: Tablette_1
+    4300016: Tablette_2
+    4300018: pCube21
+    4300020: pCube22
+    4300022: pCube24
+    4300024: Sac_2
+    4300026: "Lani\xE8re"
+    4300028: Table
+    4300030: Clim
+    4300032: Canette
+    4300034: clim_helices
+    4300036: pCube30
+    4300038: pCube31
+    4300040: pCube32
+    4300042: Tour
+    4300044: Ordi_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

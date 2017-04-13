@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: f7b6878ba93a3274bb3d8b7cf22a0b83
+timeCreated: 1492099062
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bin
+    100002: classroom
+    100004: classroom_door
+    100006: classroom_ground
+    100008: classroom_walls
+    100010: hall
+    100012: hall_ground
+    100014: hall_walls
+    100016: pCube6
+    100018: pPlane5
+    100020: pPlane6
+    100022: pPlane7
+    100024: //RootNode
+    100026: snack_dispenser
+    100028: snack_dispenser1
+    100030: toilet
+    100032: toilet_cubicle
+    100034: toilet_walls
+    100036: toilets_door
+    100038: toilets_door1
+    100040: toilets_ground
+    100042: windows_bars
+    100044: windows_bars_2
+    400000: bin
+    400002: classroom
+    400004: classroom_door
+    400006: classroom_ground
+    400008: classroom_walls
+    400010: hall
+    400012: hall_ground
+    400014: hall_walls
+    400016: pCube6
+    400018: pPlane5
+    400020: pPlane6
+    400022: pPlane7
+    400024: //RootNode
+    400026: snack_dispenser
+    400028: snack_dispenser1
+    400030: toilet
+    400032: toilet_cubicle
+    400034: toilet_walls
+    400036: toilets_door
+    400038: toilets_door1
+    400040: toilets_ground
+    400042: windows_bars
+    400044: windows_bars_2
+    2300000: bin
+    2300002: classroom_door
+    2300004: classroom_ground
+    2300006: classroom_walls
+    2300008: hall_ground
+    2300010: hall_walls
+    2300012: pPlane5
+    2300014: pPlane6
+    2300016: pPlane7
+    2300018: snack_dispenser
+    2300020: snack_dispenser1
+    2300022: toilet
+    2300024: toilet_walls
+    2300026: toilets_door
+    2300028: toilets_door1
+    2300030: toilets_ground
+    2300032: windows_bars
+    2300034: windows_bars_2
+    3300000: bin
+    3300002: classroom_door
+    3300004: classroom_ground
+    3300006: classroom_walls
+    3300008: hall_ground
+    3300010: hall_walls
+    3300012: pPlane5
+    3300014: pPlane6
+    3300016: pPlane7
+    3300018: snack_dispenser
+    3300020: snack_dispenser1
+    3300022: toilet
+    3300024: toilet_walls
+    3300026: toilets_door
+    3300028: toilets_door1
+    3300030: toilets_ground
+    3300032: windows_bars
+    3300034: windows_bars_2
+    4300000: classroom_walls
+    4300002: classroom_ground
+    4300004: windows_bars
+    4300006: toilet_walls
+    4300008: toilets_ground
+    4300010: hall_walls
+    4300012: hall_ground
+    4300014: toilets_door
+    4300016: snack_dispenser
+    4300018: windows_bars_2
+    4300020: classroom_door
+    4300022: toilet
+    4300024: bin
+    4300026: pPlane5
+    4300028: snack_dispenser1
+    4300030: pPlane6
+    4300032: pPlane7
+    4300034: toilets_door1
+    6400000: bin
+    6400002: classroom_door
+    6400004: classroom_ground
+    6400006: classroom_walls
+    6400008: hall_ground
+    6400010: hall_walls
+    6400012: pPlane5
+    6400014: pPlane6
+    6400016: pPlane7
+    6400018: snack_dispenser
+    6400020: snack_dispenser1
+    6400022: toilet
+    6400024: toilet_walls
+    6400026: toilets_door
+    6400028: toilets_door1
+    6400030: toilets_ground
+    6400032: windows_bars
+    6400034: windows_bars_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
