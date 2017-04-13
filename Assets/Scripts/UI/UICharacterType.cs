@@ -16,7 +16,7 @@ public class UICharacterType : MonoBehaviour {
     public void PlayerType(string pType)
     {
         PlayerAgent.instance.playerType = pType;
-       // SceneManager.LoadScene("Scene Name");
+       // SceneManager.LoadScene("Scene Name"); SceneName = principal scene name. Load at the start of the game
     }
 
     // Update is called once per frame
