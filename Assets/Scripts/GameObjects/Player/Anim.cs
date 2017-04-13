@@ -23,7 +23,6 @@ namespace Assets.Scripts.GameObjects.Player
             //GetComponent<Animation>().Play("idle");
             //GetComponent<Animation>().Play("piss");
             //GetComponent<Animation>().Play("punch");
-
         }
 
         protected void Update()
