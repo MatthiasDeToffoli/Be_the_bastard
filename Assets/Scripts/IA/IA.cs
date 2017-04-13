@@ -113,6 +113,42 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position);
         }
 
+        virtual protected void SetModeBibli()
+        {
+            Move();
+            if(!ClickableManager.manager.isAllwaysClicked(ClickableManager.CHAIR))
+            {
+                agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.BIBLI).transform.position);
+                doAction = DoActionBibli;
+            } else
+            {
+                agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).transform.position);
+                doAction = DoActionGoTableBeforeBibli;
+            }
+            
+
+        }
+
+        virtual protected void DoActionBibli()
+        {
+            HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.BIBLI).transform.position);
+        }
+
+        protected void DoActionGoTableBeforeBibli()
+        {
+            HavePathAction(GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).transform.position);
+        }
+
+        virtual protected void SetModePanic()
+        {
+            doAction = doActionPanic;
+        }
+
+        protected void doActionPanic()
+        {
+
+        }
+
         //waiting actions
         virtual protected void SetModeIsAtCofe()
         {
@@ -172,11 +208,11 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                 if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.DISTRIB).transform.position) SetModeIsAtDistrib();
                 else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.COFE).transform.position) SetModeIsAtCofe();
                 else if (targetPos == GameObject.FindGameObjectWithTag(InteractiveName.TOILET).transform.position) SetModeIsInToilet();
+                else if(targetPos == GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).transform.position) SetModePanic();
                 else {
                     SetModeVoid();
                 }
-
-                anim.Play("sleep");             
+            
             }
         }
 
