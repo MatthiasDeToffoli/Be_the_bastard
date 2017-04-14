@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using LitJson;
+using UnityEngine.UI;
+using Assets.Scripts.Utils;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 
 /// <summary>
 /// Type definition for mails
@@ -17,6 +20,7 @@ public struct Mail {
     public string answer1;
     public string answer2;
     public string answer3;
+    public Vector2 hour;
 
     public Mail(string pMessage, string pExpe, int pId, List<string> answers)
     {
@@ -29,6 +33,7 @@ public struct Mail {
         this.answer1 = answers[0];
         this.answer2 = answers[1];
         this.answer3 = answers[2];
+        this.hour = Vector2.zero;
     }
 }
 
@@ -39,6 +44,8 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Email
         // contains all mail (read or not)
         public static Dictionary<int, Mail> mailList = new Dictionary<int, Mail>();
 
+        public static Mail activeMail;
+
         /// <summary>
         /// Add a new mail in the mailBox
         /// </summary>
@@ -48,14 +55,46 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Email
             mailList.Add(lNewMail.id, lNewMail);
         }
 
+        // reception d'un nouveau mail
+        public static void receiveMail(int idMail)
+        {
+            activeMail = mailList[idMail];
+            activeMail.hour = HourInfo.getHour();
+        }
+
+        public static void showMail(Mail myMail)
+        {
+            GameObject.FindGameObjectWithTag("msgMail").GetComponent<Text>().text = myMail.message;
+            GameObject.FindGameObjectWithTag("senderMail").GetComponent<Text>().text = myMail.expediteur;
+            GameObject.FindGameObjectWithTag("hourMail").GetComponent<Text>().text = myMail.hour.x + "h" + myMail.hour.y;
+            GameObject.FindGameObjectWithTag("answer1").GetComponent<Text>().text = myMail.answer1;
+            GameObject.FindGameObjectWithTag("answer2").GetComponent<Text>().text = myMail.answer2;
+        }
+
         // valid the answer
         public static void answerMail(int idMail, int idRep)
         {
-            Mail lMail = mailList[idMail];
-            lMail.isRead = true;
-            lMail.answered = true;
-            lMail.answerId = idRep;
-            mailList[idMail] = lMail;
+            if (!mailList[idMail].answered)
+            {
+                Mail lMail = mailList[idMail];
+                lMail.isRead = true;
+                lMail.answered = true;
+                lMail.answerId = idRep;
+                mailList[idMail] = lMail;
+
+                if (idMail == 1)
+                {
+                    if (idRep == 2) UIBar.instance.Fill(0.15f);
+                }
+                else if (idMail == 2)
+                {
+                    if (idRep == 1) UIBar.instance.UnFill(0.15f);
+                }
+                else if (idMail == 3)
+                {
+                    if (idRep == 1) UIBar.instance.Fill(0.15f);
+                }
+            }        
         }
 
         // open the mail
@@ -69,7 +108,7 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.Email
         // get json, read and create mails
         public static void loadJson()
         {
-            string json = File.ReadAllText(Application.dataPath + "/Scripts/mails.json");
+            string json = File.ReadAllText(Application.dataPath + "/Scripts/Json/mails.json");
             JsonData jsonMails = JsonMapper.ToObject(json);
 
             int nbMail = jsonMails.Count;

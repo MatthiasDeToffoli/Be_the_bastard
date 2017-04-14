@@ -2,34 +2,34 @@
 
   "1" :
     {
-      "txt" : "Hey’ tu pourrais m’envoyer les assets du projet s'il-te-plaît ?",
+      "txt" : "Hey ! tu pourrais m'envoyer les assets stp ?",
       "exp" : "Jean",
       "rep" : [
-        "Oui je m’en occuperais dans la journée.",
+        "Oui je m'en occuperais dans la journee.",
         "Non.",
-        "Ne pas répondre."
+        "Ne pas repondre."
       ]
     },
 
   "2" :
   {
-    "txt" : "Tu penses pouvoir t’occuper des assets aujourd’hui ?",
+    "txt" : "Tu penses pouvoir t'occuper des assets ojd ?",
     "exp" : "Paul",
     "rep" : [
-      "Ouais si j’ai le temps.",
-      "J’sais pas, on verra.",
-      "Ne pas répondre"
+      "Ouais si j'ai le temps.",
+      "J'sais pas, on verra.",
+      "Ne pas repondre"
     ]
   },
 
    "3" :
   {
-    "txt" : "T’as commencé les tests d’intégration ?",
+    "txt" : "T'as commence les tests d'integration ?",
     "exp" : "Sophie",
     "rep" : [
-      "J’ai pas le temps, tu peux pas le faire ?",
+      "J'ai pas le temps, tu peux pas le faire ?",
       "Nan, pas encore.",
-      "Ne pas répondre"
+      "Ne pas repondre"
     ]
   }
 

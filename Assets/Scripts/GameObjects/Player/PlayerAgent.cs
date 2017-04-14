@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using Assets.Scripts.Managers;
 using UnityEngine.EventSystems;
 using Com.IsartDigital.BeTheBastard.Scripts.UI;
+using Com.IsartDigital.BeTheBastard.Scripts.Email;
 
 namespace Assets.Scripts.GameObjects.Player
 {
@@ -49,6 +50,7 @@ namespace Assets.Scripts.GameObjects.Player
             _instance = this;
 
             pos = Vector3.zero;
+            MailBox.loadJson();
         }
 
         protected void Start()

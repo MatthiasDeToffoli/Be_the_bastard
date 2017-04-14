@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameObjects.Player;
+using Com.IsartDigital.BeTheBastard.Scripts.Email;
 using Com.IsartDigital.BeTheBastard.Scripts.Managers;
 using System.Collections.Generic;
 using UnityEngine;
@@ -95,6 +96,7 @@ namespace Assets.Scripts.Managers
             if(objectName == LAPTOP)
             {
                 pannelMail.SetActive(true);
+                MailBox.showMail(MailBox.activeMail);
                 return;
             }
 

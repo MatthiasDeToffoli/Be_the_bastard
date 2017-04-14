@@ -1,4 +1,5 @@
-﻿using Com.IsartDigital.BeTheBastard.Scripts.UI;
+﻿using Com.IsartDigital.BeTheBastard.Scripts.Email;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -57,8 +58,7 @@ namespace Assets
         void Awake()
         {
             choiceBtn = new ChoiceEvent();
-            EmailMessage();
-            
+            EmailMessage(); 
         }
 
        
