@@ -55,8 +55,8 @@ namespace Assets.Scripts.GameObjects
                 Metronome.instance.interTic.AddListener(MinuteRotation);
             }
 
-            aiguilleMinute.transform.rotation = Quaternion.Euler(0, 0, - HourInfo.hours * 360 / 12);
-            aiguilleHeure.transform.rotation = Quaternion.Euler(0, 0, - HourInfo.minutes * 360);
+            aiguilleMinute.transform.rotation = Quaternion.Euler(0, 180, HourInfo.hours * 360 / 12);
+            aiguilleHeure.transform.rotation = Quaternion.Euler(0, 180, HourInfo.minutes * 360);
         }
 
         protected void Update()
@@ -67,12 +67,12 @@ namespace Assets.Scripts.GameObjects
         public void HeureRotation()
         {
             heure++;
-            aiguilleMinute.transform.rotation = Quaternion.Euler(0,0, -heure * 360/12);
+            aiguilleMinute.transform.rotation = Quaternion.Euler(0,180, heure * 360/12);
         }
 
         public void MinuteRotation(float pMinutes)
         {
-            aiguilleHeure.transform.rotation = Quaternion.Euler(0, 0, -pMinutes * 360 ); 
+            aiguilleHeure.transform.rotation = Quaternion.Euler(0, 180, pMinutes * 360 ); 
         }
 
         protected void OnDestroy()

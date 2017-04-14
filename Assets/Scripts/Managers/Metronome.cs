@@ -78,7 +78,6 @@ namespace Assets.Scripts.Managers
             if (movingTime >= totalTime) {
                 movingTime = 0;
                 HourInfo.hours++;
-                HourInfo.minutes = 0;
                 onTic.Invoke();
             }
             else {

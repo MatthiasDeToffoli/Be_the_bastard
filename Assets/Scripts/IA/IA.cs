@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.GameObjects;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Utils;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         protected Dictionary<Vector2, Action> actions;
 
         [SerializeField]
-        protected Vector3 workPos;
+        protected GameObject workPos;
         [SerializeField]
         protected GameObject workTable;
             
@@ -31,10 +32,11 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         virtual protected void Awake()
         {
-            SetModeVoid();
+           
             agent = GetComponent<NavMeshAgent>();
             anim = GetComponent<Animation>();
             actualPosition = "working";
+            SetModeVoid();
         }
 
         //work action
@@ -44,7 +46,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             anim.wrapMode = WrapMode.Loop;
             anim.Play("walk");
 
-            agent.SetDestination(workPos);
+            agent.SetDestination(workPos.transform.position);
             doAction = DoActionGoWork;
         }
 
@@ -56,6 +58,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         //void action
         virtual protected void SetModeVoid()
         {
+            anim.Play("idle");
+            anim.wrapMode = WrapMode.Loop;
             doAction = DoActionVoid;
         }
 
@@ -180,12 +184,16 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         virtual protected void SetModePissing()
         {
-            Debug.Log("pisse");
+            anim.Play("piss");
+            anim.wrapMode = WrapMode.Loop;
+            UIBar.instance.Fill(2);
         }
 
         //waiting actions
         virtual protected void SetModeIsAtCofe()
         {
+            anim.wrapMode = WrapMode.Once;
+            anim.Play("punch");
             doAction = IsAtCofe;
         }
 
@@ -196,6 +204,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
         virtual protected void SetModeIsAtDistrib()
         {
+            anim.wrapMode = WrapMode.Once;
+            anim.Play("punch");
             doAction = IsAtDistrib;
         }
 
@@ -251,7 +261,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                 else
                 {
                     SetModeVoid();
-                    anim.Play("sleep");
+                    anim.Play("use_computer");
                 }           
             }
         }

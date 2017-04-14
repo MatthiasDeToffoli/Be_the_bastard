@@ -34,7 +34,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
                 }
                 else
                 {
-                    agent.SetDestination(new Vector3(1.91f, 0.5f, -4.38f));
+                    agent.SetDestination(new Vector3(-4f, 0f, 18.25f));
                     SetModeMove();
                 }               
             }

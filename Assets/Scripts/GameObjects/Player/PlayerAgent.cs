@@ -80,7 +80,8 @@ namespace Assets.Scripts.GameObjects.Player
 
         protected void SetModeVoid()
         {
-            anim.Stop();
+            anim.Play("idle");
+            anim.wrapMode = WrapMode.Loop;
             doAction = DoActionVoid;
         }
 
@@ -148,7 +149,7 @@ namespace Assets.Scripts.GameObjects.Player
         {
             if (!agent.hasPath)
             {
-                if(objClicked.transform.tag != "bubblePlane")
+                if(objClicked.transform.tag != "plane")
                 {
                     Vector3 roundTargetPos = new Vector3(objClicked.transform.position.x, 0, objClicked.transform.position.z);
                     Vector3 roundAgentPos = new Vector3(transform.position.x, 0, transform.position.z);

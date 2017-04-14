@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.GameObjects;
 using Assets.Scripts.Managers;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,15 +16,17 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         protected bool haveDrinkCoffee = false;
         protected bool haveCry = false;
 
+        protected bool flagCoffe = false;
+
         override protected void Awake()
         {
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 30), SetModeGoCofe);
+            actions.Add(new Vector2(9, 35), SetModeGoCofe);
             actions.Add(new Vector2(10, 30), SetModeGoWork);
-            actions.Add(new Vector2(12, 20), GoToSleep);
-            actions.Add(new Vector2(15, 0), SetModeGoToilet);
+            actions.Add(new Vector2(11, 50), GoToSleep);
+            actions.Add(new Vector2(15, 0), GoToilet);
             actions.Add(new Vector2(15, 30), SetModeGoWork);
         }
 
@@ -45,7 +48,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
 
             if (!haveDrinkCoffee && !haveCry)
             {
-                agent.SetDestination(new Vector3(0.77f, 0.5f, -3.12f));
+                agent.SetDestination(new Vector3(0.78f, 0f, 14.16f));
                 doAction = DoActionGoAngry;
             } 
             else
@@ -81,11 +84,19 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             if (!ClickableManager.manager.isAllwaysClicked(ClickableManager.COFFEE))
             {
+                
+
                 ClickableManager.manager.mate2HaveDrink = true;
                 haveDrinkCoffee = true;
             }
             else
             {
+                if (!flagCoffe)
+                {
+                    flagCoffe = true;
+                    UIBar.instance.Fill(0.5f);
+                }
+
                 haveDrinkCoffee = false;
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.GameObjects.Player;
+using System;
 
 namespace Com.IsartDigital.BeTheBastard.Scripts.UI
 {
@@ -29,7 +30,16 @@ namespace Com.IsartDigital.BeTheBastard.Scripts.UI
         {
            
         }
-        
+
+        protected void Awake()
+        {
+            if (_instance != null)
+            {
+                throw new Exception("Tentative de création d'une autre instance de PlayerAgent alors que c'est un singleton.");
+            }
+            _instance = this;
+        }
+
         public void CheckChaosBarState()
         {
             float chaosBarSize = GetComponent<Scrollbar>().size;

@@ -25,6 +25,7 @@ namespace Assets.Scripts.Managers
         public const string CHAIR = "chair";
         public const string COFFEE = "coffee";
         public const string DISTRIB = "distrib";
+        public const string LAPTOP = "laptot";
         protected const string NONE = "none";
 
         protected const string SABOT = "Saboter";
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Managers
         protected const string PAST_PANEL = "poser un panneau en panne";
 
         protected GameObject myPanel;
+        protected GameObject pannelMail;
         protected Text rep1;
 
         protected string objectName;
@@ -45,6 +47,7 @@ namespace Assets.Scripts.Managers
         protected void Start()
         {
             myPanel = GameObject.FindGameObjectWithTag("hudContextuel");
+            pannelMail = GameObject.FindGameObjectWithTag("panelMail");
             rep1 = GameObject.FindGameObjectWithTag("contextuelReponse1").GetComponent<Text>();
 
             closePanel();
@@ -88,6 +91,12 @@ namespace Assets.Scripts.Managers
         public void OpenPanel()
         {
             if (!isAClickable()) return;
+
+            if(objectName == LAPTOP)
+            {
+                pannelMail.SetActive(true);
+                return;
+            }
 
             switch (objectName)
             {
@@ -137,6 +146,7 @@ namespace Assets.Scripts.Managers
 
         public void closePanel()
         {
+            pannelMail.SetActive(false);
             myPanel.SetActive(false);
             SetObjectName();
         }
