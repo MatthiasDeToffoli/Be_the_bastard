@@ -128,6 +128,29 @@ ModelImporter:
     4300040: pCube32
     4300042: Tour
     4300044: Ordi_2
+    6400000: Bibliotheque
+    6400002: Canette
+    6400004: Clim
+    6400006: clim_helices
+    6400008: "Lani\xE8re"
+    6400010: Ordi_2
+    6400012: Ordinateur
+    6400014: pCube10
+    6400016: pCube12
+    6400018: pCube13
+    6400020: pCube14
+    6400022: pCube15
+    6400024: pCube21
+    6400026: pCube22
+    6400028: pCube24
+    6400030: pCube30
+    6400032: pCube31
+    6400034: pCube32
+    6400036: Sac_2
+    6400038: Table
+    6400040: Tablette_1
+    6400042: Tablette_2
+    6400044: Tour
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -157,7 +180,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
