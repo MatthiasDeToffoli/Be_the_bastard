@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using System.Collections;
 using System;
 using Assets.Scripts.Utils;
+using Assets.Scripts.GameObjects;
 
 public class TempoEvent : UnityEvent<float> { };
 
@@ -78,6 +79,11 @@ namespace Assets.Scripts.Managers
             if (movingTime >= totalTime) {
                 movingTime = 0;
                 HourInfo.hours++;
+                if (HourInfo.hours == 12)
+                {
+                    HourInfo.hours += 2;
+                    Horloge.heure += 2;
+                }
                 onTic.Invoke();
             }
             else {

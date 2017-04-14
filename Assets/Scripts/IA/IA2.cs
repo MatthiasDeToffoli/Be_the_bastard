@@ -15,16 +15,15 @@ namespace Com.IsartDigital.Assets.Scripts.IA
     {
         protected bool haveDrinkCoffee = false;
         protected bool haveCry = false;
-
-        protected bool flagCoffe = false;
+        protected bool haveFillForCry = false;
 
         override protected void Awake()
         {
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 35), SetModeGoCofe);
-            actions.Add(new Vector2(10, 30), SetModeGoWork);
+            actions.Add(new Vector2(10, 15), SetModeGoCofe);
+            actions.Add(new Vector2(11, 0), SetModeGoWork);
             actions.Add(new Vector2(11, 50), GoToSleep);
             actions.Add(new Vector2(15, 0), GoToilet);
             actions.Add(new Vector2(15, 30), SetModeGoWork);
@@ -71,7 +70,12 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             if (!agent.hasPath)
             {
-                Debug.Log(name + "Cette putin de machine a café est en panne !");
+                if (!haveFillForCry)
+                {
+                    haveFillForCry = true;
+                    UIBar.instance.Fill(0.3f);
+                }
+
                 anim.Play("sleep");
                 SetModeVoid();
                 StartCoroutine(WaitAndGoWork());
@@ -91,12 +95,6 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             }
             else
             {
-                if (!flagCoffe)
-                {
-                    flagCoffe = true;
-                    UIBar.instance.Fill(0.5f);
-                }
-
                 haveDrinkCoffee = false;
             }
         }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Com.IsartDigital.BeTheBastard.Scripts.UI;
+using UnityEngine;
 
 namespace Assets.Scripts.GameObjects
 {
@@ -24,7 +25,7 @@ namespace Assets.Scripts.GameObjects
         public void fall()
         {
             //anim.Play();
-            Debug.Log("chut");
+            UIBar.instance.Fill(0.5f);
         }
 
         

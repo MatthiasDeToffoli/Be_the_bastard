@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.GameObjects;
 using Assets.Scripts.Managers;
+using Com.IsartDigital.BeTheBastard.Scripts.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 51), SetModeGoWork);
+            actions.Add(new Vector2(9, 42), SetModeGoWork);
             actions.Add(new Vector2(15, 20), GoCofe);
-            actions.Add(new Vector2(16, 20), SetModeGoWork);
+            actions.Add(new Vector2(16, 5), SetModeGoWork);
         }
 
         protected override void SetModeGoWork()
@@ -65,6 +66,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         IEnumerator BimCoroutine()
         {
             yield return new WaitForSeconds(5);
+            UIBar.instance.Fill(0.12f);
             haveFightForCoffee = true;
             SetModeGoWork();
         }

@@ -21,8 +21,8 @@ namespace Assets.Scripts.GameObjects
         protected GameObject aiguilleMinute;
         #endregion
 
-        protected float minute;
-        protected float heure;
+        public static float minute;
+        public static float heure;
 
         /// <summary>
         /// instance unique de la classe     

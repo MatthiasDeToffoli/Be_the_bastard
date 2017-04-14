@@ -22,7 +22,7 @@ namespace Assets.Scripts.Clickable
 
         protected void OnMouseUp()
         {
-            //ClickableManager.manager.SetObjectName(tag);
+            ClickableManager.manager.SetObjectName(tag);
         }
     }
 }

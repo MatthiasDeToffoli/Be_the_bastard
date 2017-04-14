@@ -14,7 +14,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             base.Awake();
             actions = new Dictionary<Vector2, Action>();
 
-            actions.Add(new Vector2(9, 37), SetModeGoWork);
+            actions.Add(new Vector2(9, 39), SetModeGoWork);
             actions.Add(new Vector2(11, 30), GoSleep);
         }
 

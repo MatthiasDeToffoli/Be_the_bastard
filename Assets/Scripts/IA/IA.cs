@@ -127,7 +127,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             {
                 agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.BIBLI).transform.position);
                 doAction = DoActionBibli;
-            } else
+            }
+            else
             {
                 agent.SetDestination(GameObject.FindGameObjectWithTag(InteractiveName.CHAIR).transform.position);
                 doAction = DoActionGoTableBeforeBibli;
@@ -186,7 +187,8 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             anim.Play("piss");
             anim.wrapMode = WrapMode.Loop;
-            UIBar.instance.Fill(2);
+
+            UIBar.instance.Fill(0.2f);
         }
 
         //waiting actions
@@ -194,6 +196,15 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             anim.wrapMode = WrapMode.Once;
             anim.Play("punch");
+
+            if (ClickableManager.manager.isAllwaysClicked(ClickableManager.COFFEE)) {
+                UIBar.instance.Fill(0.1f);
+            }
+            else
+            {
+                UIBar.instance.UnFill(0.2f);
+            }
+
             doAction = IsAtCofe;
         }
 

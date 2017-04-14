@@ -18,7 +18,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
             actions = new Dictionary<Vector2, Action>();
 
              actions.Add(new Vector2(9, 30), SetModeBibli);
-             actions.Add(new Vector2(10, 30), SetModeGoWork);
+             actions.Add(new Vector2(10, 15), SetModeGoWork);
         }
 
 
