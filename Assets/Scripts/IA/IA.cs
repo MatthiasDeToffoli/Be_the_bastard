@@ -217,6 +217,16 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
             anim.wrapMode = WrapMode.Once;
             anim.Play("punch");
+
+            if (ClickableManager.manager.isAllwaysClicked(ClickableManager.DISTRIB))
+            {
+                UIBar.instance.Fill(0.1f);
+            }
+            else
+            {
+                UIBar.instance.UnFill(0.1f);
+            }
+
             doAction = IsAtDistrib;
         }
 
