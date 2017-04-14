@@ -31,8 +31,6 @@ namespace Assets
         [SerializeField]
         protected Text choice3;
 
-        public ChoiceEvent choiceBtn;
-
         protected UIBar bar;
 
         protected const float BONUS = 0.05f;
@@ -57,7 +55,6 @@ namespace Assets
 
         void Awake()
         {
-            choiceBtn = new ChoiceEvent();
             EmailMessage(); 
         }
 

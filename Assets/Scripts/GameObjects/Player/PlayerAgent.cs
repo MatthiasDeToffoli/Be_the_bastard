@@ -50,7 +50,7 @@ namespace Assets.Scripts.GameObjects.Player
             _instance = this;
 
             pos = Vector3.zero;
-            MailBox.loadJson();
+            //MailBox.loadJson();
         }
 
         protected void Start()
