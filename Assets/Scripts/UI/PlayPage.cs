@@ -14,7 +14,7 @@ public class PlayPage : MonoBehaviour {
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("TestMail");
+        SceneManager.LoadScene("Game");
     }
 
     // Update is called once per frame
