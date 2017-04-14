@@ -31,7 +31,7 @@ namespace Assets.Scripts.Managers
 
         protected const string SABOT = "Saboter";
         protected const string UNPLUG = "débrancher";
-        protected const string PAST_PANEL = "poser un panneau en panne";
+        protected const string PAST_PANEL = "en panne";
 
         protected GameObject myPanel;
         protected GameObject pannelMail;

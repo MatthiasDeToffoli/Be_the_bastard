@@ -34,7 +34,7 @@ namespace Com.IsartDigital.Assets.Scripts.IA
         {
            
             agent = GetComponent<NavMeshAgent>();
-            anim = GetComponent<Animation>();
+            anim = GetComponentInChildren<Animation>();
             actualPosition = "working";
             SetModeVoid();
         }

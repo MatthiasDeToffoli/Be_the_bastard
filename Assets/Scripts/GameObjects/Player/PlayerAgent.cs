@@ -55,9 +55,8 @@ namespace Assets.Scripts.GameObjects.Player
 
         protected void Start()
         {
-            agent = GetComponent<NavMeshAgent>();
-
-            anim = GetComponent<Animation>();
+            agent =  GetComponent<NavMeshAgent>();
+            anim = GetComponentInChildren<Animation>();
             SetModeVoid();
             //agent.SetDestination(new Vector3(5, 0, 0));
         }
